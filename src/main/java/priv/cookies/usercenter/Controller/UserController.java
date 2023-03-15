@@ -73,7 +73,7 @@ public class UserController {
         User currentUser = (User) userObj;
         if (currentUser == null) throw new BusinessException(ErrorCode.NOT_LOGIN);
         long id = currentUser.getId();
-        
+
         User user = userService.getById(id);
         User safetyUser = userService.getSafetyUser(user);
         return ResultUtil.success(safetyUser);
